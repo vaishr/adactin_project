@@ -6,6 +6,10 @@
 
 * Maven
 * Log4j
-* JUnit
+* TestNG
+* Selenium WebDriver
+* Apache POI
+* JDBC
+* MySQL
 
 [Vaishnavi Reddy](https://github.com/vaishr)
