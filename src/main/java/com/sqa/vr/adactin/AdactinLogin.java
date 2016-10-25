@@ -35,6 +35,10 @@ public class AdactinLogin {
 	@FindBy(id = "login")
 	WebElement loginBtn;
 
+public AdactinLogin(WebDriver driver) {
+	this.driver = driver;
+	PageFactory.initElements(driver, this);
+}
 
 public SearchHotel login(String username, String password) {
 	usernameFld.clear();
@@ -43,11 +47,6 @@ public SearchHotel login(String username, String password) {
 	passwordFld.sendKeys(password);
 	loginBtn.click();
 	return new SearchHotel(driver);
-}
-
-public AdactinLogin(WebDriver driver) {
-	this.driver = driver;
-	PageFactory.initElements(driver, this);
 }
 
 }

@@ -69,7 +69,7 @@ public class SearchHotel {
 		PageFactory.initElements(driver, this);
 	}
 	
-    public void search(String locationInput, String hotelsInput, String roomTypeInput, String numOfRoomsInput,
+    public SelectHotel search(String locationInput, String hotelsInput, String roomTypeInput, String numOfRoomsInput,
     			String checkInDateInput, String checkOutDateInput, String adultsPerRoomInput, String childrenPerRoomInput) {
 	        Select locationSelect = new Select(this.location);
 	        locationSelect.selectByVisibleText(locationInput);
@@ -94,6 +94,10 @@ public class SearchHotel {
 	        
 	        Select childrenPerRoomSelect = new Select(this.childrenPerRoom);
 	        childrenPerRoomSelect.selectByValue(childrenPerRoomInput);
+	        
+	        this.submitBtn.click();
+	        
+	        return new SelectHotel(driver);
 	    }
 	
 }
